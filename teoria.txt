@@ -1,0 +1,12 @@
+Dlaczego warto wybrać JSON zamiast zwykłego pliku .txt?
+
+JSON to format, który przechowuje dane wraz z nazwami pól, czyli tzw. kluczami. Dzięki temu biblioteki takie jak Jackson potrafią łatwo dopasować wartości do odpowiednich obiektów. W pliku .txt natomiast mamy po prostu ciąg znaków, co oznacza, że trzeba samemu zajmować się ich interpretacją i rozdzielaniem.
+
+A co się stanie, gdy w klasie zabraknie pustego konstruktora?
+
+Wtedy Jackson wygeneruje wyjątek, dokładniej JsonMappingException. Tak się dzieje, bo biblioteka najpierw próbuje stworzyć pusty obiekt przez konstruktor bez argumentów, a dopiero potem wypełnia go danymi. Bez takiego konstruktora to się nie powiedzie.
+
+Na co służy słowo kluczowe transient?
+
+Transient informuje, że określone pola mają być pominięte podczas serializacji. Innymi słowy, wartości tych pól nie pojawią się w zapisywanym pliku JSON. Przydaje się to na przykład w przypadku haseł czy danych tymczasowych, których nie chcemy utrwalać.
+
