@@ -1,8 +1,0 @@
-Dlaczego JSON jest lepszy od zwykłego .txt?
-JSON to format strukturalny – przechowuje dane wraz z nazwami pól (kluczami). Dzięki temu biblioteki (np. Jackson) wiedzą, jak przypisać wartości do obiektów. W pliku .txt dane są tylko ciągiem znaków, więc trzeba samodzielnie je analizować.
-
-Co się stanie, jeśli w klasie zabraknie pustego konstruktora?
-Jackson wyrzuci wyjątek (JsonMappingException), ponieważ najpierw tworzy pusty obiekt za pomocą konstruktora bezargumentowego, a dopiero potem uzupełnia go danymi.
-
-Do czego służy słowo kluczowe transient?
-Oznacza pola pomijane podczas serializacji. Ich wartości nie są zapisywane do JSON-a – używa się tego np. dla haseł lub danych tymczasowych.
